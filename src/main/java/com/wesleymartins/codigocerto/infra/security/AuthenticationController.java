@@ -1,6 +1,7 @@
 package com.wesleymartins.codigocerto.infra.security;
 
 import com.wesleymartins.codigocerto.entities.AuthenticationDTO;
+import com.wesleymartins.codigocerto.entities.LoginResponseDTO;
 import com.wesleymartins.codigocerto.entities.RegisterDTO;
 import com.wesleymartins.codigocerto.entities.User;
 import com.wesleymartins.codigocerto.repositories.UserRepository;
@@ -24,12 +25,16 @@ public class AuthenticationController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private TokenService tokenService;
+
     @PostMapping(value = "/login")
     public ResponseEntity login(@RequestBody AuthenticationDTO data){
         var usernamePassword = new
                 UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = authenticationManager.authenticate(usernamePassword);
-        return ResponseEntity.ok().build();
+        var token = tokenService.generateToken((User) auth.getPrincipal());
+        return ResponseEntity.ok(new LoginResponseDTO(token));
     }
 
     @PostMapping(value = "/register")
