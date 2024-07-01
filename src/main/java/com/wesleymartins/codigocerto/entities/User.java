@@ -28,6 +28,9 @@ public class User implements Serializable, UserDetails {
         this.password = password;
     }
 
+    public User(String login, String encryptedPassword) {
+    }
+
     public Long getId() {
         return id;
     }
