@@ -43,7 +43,7 @@ public class TarefaService {
     }
 
     @Transactional(readOnly = false)
-    private void delete(Long id){
+    public void delete(Long id){
         tarefaRepository.deleteById(id);
     }
 }
