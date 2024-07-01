@@ -3,6 +3,38 @@
 # 📚 Trilha Inicial BackEnd Jr
 Este projeto tem como objetivo desenvolver uma API RESTful para gerenciamento de tarefas, proporcionando funcionalidades de CRUD (Create, Read, Update, Delete) de tarefas, autenticação de usuários e armazenamento dos dados em um banco de dados.
 
+# END POINTS:
+- /users: Post, insere um usuário;
+- /tarefas: GET, retorna todas as tarefas;
+- /tarefas/id: GET, retorna uma tarefa equivalente a aquele ID;
+- /tarefas/id: DELETE, deleta uma tarefa específica baseada no ID passado;
+- /tarefas: POST, insere uma tarefa;
+- /tarefas/id: PUT, atualiza uma tarefa específica baseada no ID;
+- /auth/register: POST, Registra um usuário no sistema;
+- /auth/login: POST, Realiza o login no sistema.
+
+# CONFIGURAÇÃO
+Java 17
+Spring Web
+Spring Data
+Spring Security
+JPA / Hibernate
+Maven
+
+## Back end
+Pré-requisitos: Java 17
+
+```bash
+# clonar repositório
+git clone https://github.com/wesleymartinsbrito/eduquei.git
+
+# entrar na pasta do projeto back end
+cd backend
+
+# executar o projeto
+./mvnw spring-boot:run
+```
+
 ## Objetivos:
 - Criar uma API que permita CRUD (Create, Read, Update, Delete) de tarefas.
 - Implementar autenticação de usuários.
