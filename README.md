@@ -26,10 +26,7 @@ Pré-requisitos: Java 17
 
 ```bash
 # clonar repositório
-git clone https://github.com/wesleymartinsbrito/eduquei.git
-
-# entrar na pasta do projeto back end
-cd backend
+git clone https://github.com/wesleymartinsbrito/TrilhaBackEndJR-JUN15
 
 # executar o projeto
 ./mvnw spring-boot:run
