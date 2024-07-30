@@ -28,7 +28,7 @@ public class TarefaController {
             @ApiResponse(responseCode = "500", description = "Erro ao encontrar a tarefa"),
     })
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Optional<Tarefa>> findById(Long id){
+    public ResponseEntity<Optional<Tarefa>> findById(@PathVariable Long id){
         return ResponseEntity.ok().body(tarefaService.findById(id));
     }
 
@@ -53,7 +53,7 @@ public class TarefaController {
             @ApiResponse(responseCode = "500", description = "Erro ao inserir a tarefa"),
     })
     @PostMapping
-    public ResponseEntity<Tarefa> insert(Tarefa tarefa) {
+    public ResponseEntity<Tarefa> insert(@RequestBody Tarefa tarefa) {
         return ResponseEntity.ok().body(tarefaService.insert(tarefa));
     }
 
@@ -65,7 +65,7 @@ public class TarefaController {
             @ApiResponse(responseCode = "500", description = "Erro ao deletar a tarefa"),
     })
     @DeleteMapping(value = "/{id}")
-    public void delete(Long id){
+    public void delete(@PathVariable Long id){
         tarefaService.delete(id);
     }
 
@@ -77,7 +77,7 @@ public class TarefaController {
             @ApiResponse(responseCode = "500", description = "Erro ao atualizar a tarefa"),
     })
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Tarefa> update(Long id, Tarefa entity){
+    public ResponseEntity<Tarefa> update(@PathVariable Long id, @RequestBody Tarefa entity){
         return ResponseEntity.ok().body(tarefaService.update(entity, id));
     }
 }
