@@ -9,7 +9,7 @@ public class NavConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("https://api-codigocerto-f78e930563d7.herokuapp.com/","https://trilhabackendjr-jun15-production-b87f.up.railway.app","http://localhost:8080")
+                .allowedOrigins("https://api-codigocerto-f78e930563d7.herokuapp.com/","http://localhost:8080")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
